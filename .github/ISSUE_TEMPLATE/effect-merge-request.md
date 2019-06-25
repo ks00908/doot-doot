@@ -1,6 +1,6 @@
 ---
-name: Effect Merge Request
-about: This template serves as boilerplate to submitting merge request for sound effects
+name: Effect Pull Request
+about: This template serves as boilerplate to submitting pull request for sound effects
 title: ''
 labels: ''
 assignees: ''
