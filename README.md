@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ks00908/doot-doot.svg?branch=master)](https://travis-ci.org/ks00908/doot-doot)
+
 # doot-doot
 A discord bot that play sound effects in voice channel on command.
 
