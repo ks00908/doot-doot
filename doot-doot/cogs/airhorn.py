@@ -2,51 +2,42 @@ import discord
 import asyncio
 from discord.ext import commands
 
+
+async def play_file(self, voice_channel, filename):
+    print(f'{str(user)} is in {voice_channel}')
+    voice_channel = await voice_channel.connect()
+    source = discord.FFmpegPCMAudio(filename)
+    voice_channel.play(source, after=lambda: print("played doot"))
+    await ctx.send(":thumbsup: dooted the doot")
+    while voice_channel.is_playing():
+        await asyncio.sleep(1)
+    voice_channel.stop()
+    await voice_channel.disconnect()
+
+
 class airhorn(commands.Cog):
 
-    def __init__(self, client):
-        # creation of the cog, do init stuff here, also gets and stores the bot
-        self.bot = client
-    
+    def __init__(self, bot):
+        self.bot = bot
+
     @commands.command()
     @commands.guild_only()
     async def doot(self, ctx):
-        """Doots the horn"""
-        user = ctx.author
-        if not user.voice:
-             await ctx.send("You are not in voice channel.")
+        """Doots the horn."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
         else:
-             vc = user.voice.channel
-             print(f'{str(user)} is in {vc}')
-             vc_channel = await vc.connect()
-             source = discord.FFmpegPCMAudio('airhorn.mp3')
-             vc_channel.play(source, after=lambda: print("player doot"))
-             await ctx.send(":thumbsup: dooted the doot")
-             while vc_channel.is_playing():
-                 await asyncio.sleep(1)
-             vc_channel.stop()
-             await vc_channel.disconnect()
-
+            await play_file(ctx.author.voice.channel, "airhorn.mp3")
 
     @commands.command()
     @commands.guild_only()
     async def bazinga(self, ctx):
-        """Plays bazinga effect"""
-        user = ctx.author
-        if not user.voice:
-             await ctx.send("You are not in voice channel.")
+        """Plays bazinga effect."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
         else:
-             vc = user.voice.channel
-             print(f'{str(user)} is in {vc}')
-             vc_channel = await vc.connect()
-             source = discord.FFmpegPCMAudio('bazinga.mp3')
-             vc_channel.play(source, after=lambda: print("error") )
-             await ctx.send(":thumbsup: **BAZINGA**")
-             while vc_channel.is_playing():
-                 await asyncio.sleep(1)
-             vc_channel.stop()
-             await vc_channel.disconnect()
+            await play_file(ctx.author.voice.channel, "bazinga.mp3")
 
 
-def setup(client):
-    client.add_cog(airhorn(client))
+def setup(bot):
+    bot.add_cog(airhorn(bot))
