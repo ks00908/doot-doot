@@ -3,7 +3,9 @@ import asyncio
 from discord.ext import commands
 
 
-async def play_file(self, voice_channel, filename):
+async def play_file(self, ctx, filename):
+    voice_channel = ctx.author.voice.channel
+    print(f'{str(ctx.author)} is in {voice_channel}')
     voice_channel = await voice_channel.connect()
     source = discord.FFmpegPCMAudio(filename)
     voice_channel.play(source, after=lambda: print("played doot"))
@@ -26,8 +28,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            print(f'{str(user)} is in {voice_channel}')
-            await play_file(ctx.author.voice.channel, "airhorn.mp3")
+            await play_file(ctx, "airhorn.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -36,8 +37,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            print(f'{str(user)} is in {voice_channel}')
-            await play_file(ctx.author.voice.channel, "bazinga.mp3")
+            await play_file(ctx, "bazinga.mp3")
 
 
 def setup(bot):
