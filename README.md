@@ -17,9 +17,10 @@ Airhorn
 ### Starting bot:
   1. install prerequisities
   2. copy bot files to location where you want to store them
-  3. open CMD/PowerShell/Terminal and navigate to folder with bot files
-  4. type ``python main.py`` (if it will not work try ``python3.7 main.py``
-  5. wait untill bot login to discord
+  3. replace 'token' in main.py with token
+  4. open CMD/PowerShell/Terminal and navigate to folder with bot files
+  5. type ``python main.py`` (if it will not work try ``python3.7 main.py``
+  6. wait untill bot login to discord
   
   
 ## Adding new sound effects
