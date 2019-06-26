@@ -40,4 +40,4 @@ async def on_ready():
  print(f'Logged in as {client.user.name} (ID:{client.user.id}) | Connected to {len(client.guilds)} servers')
  await client.change_presence(activity=discord.Game(name='Dooting on the haters'))
 
-client.run(token)
+client.run("token")

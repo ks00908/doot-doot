@@ -19,7 +19,7 @@ class airhorn(commands.Cog):
              vc = user.voice.channel
              print(f'{str(user)} is in {vc}')
              vc_channel = await vc.connect()
-             source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio('airhorn.mp3'))
+             source = discord.FFmpegPCMAudio('airhorn.mp3')
              vc_channel.play(source, after=lambda: print("player doot"))
              await ctx.send(":thumbsup: dooted the doot")
              while vc_channel.is_playing():
@@ -31,7 +31,7 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def bazinga(self, ctx):
-        """Playes bazinga effect"""
+        """Plays bazinga effect"""
         user = ctx.author
         if not user.voice:
              await ctx.send("You are not in voice channel.")
@@ -39,9 +39,9 @@ class airhorn(commands.Cog):
              vc = user.voice.channel
              print(f'{str(user)} is in {vc}')
              vc_channel = await vc.connect()
-             source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio('bazinga.mp3'))
-             vc_channel.play(source, after=lambda: print("played doot"))
-             await ctx.send(":thumbsup: dooted the doot")
+             source = discord.FFmpegPCMAudio('bazinga.mp3')
+             vc_channel.play(source, after=lambda: print("error") )
+             await ctx.send(":thumbsup: **BAZINGA**")
              while vc_channel.is_playing():
                  await asyncio.sleep(1)
              vc_channel.stop()
