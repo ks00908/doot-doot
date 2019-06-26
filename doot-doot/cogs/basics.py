@@ -19,6 +19,19 @@ class basics(commands.Cog):
      # cog unloading, cleaup if needed
      pass
 
+ @commands.command(hidden=True)
+ async def reload(self, ctx, *, cog: str):
+     cogs = []
+     cog = cog.lower()
+     for c in ctx.bot.cogs:
+         cogs.append(c.replace('Cog', '').lower())
+
+     if cog in cogs:
+         self.bot.unload_extension(f"cogs.{cog}")
+         self.bot.load_extension(f"cogs.{cog}")
+         await ctx.send(f'**{cog}** has been reloaded.')
+     else:
+         await ctx.send(f"I can't find that cog.")
 
 
 
