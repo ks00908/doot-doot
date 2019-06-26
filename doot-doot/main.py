@@ -29,7 +29,7 @@ client = Bot(description="dooting on the haters", command_prefix="D.", pm_help=F
 if __name__ == '__main__':
     for extension in initial_extensions:
         try:
-            client.load_extension(f"cogs.{extension}")
+            client.load_extension("cogs." + extension)
         except Exception as e:
             print(f"error occured while loading cog")
             print(traceback.format_exc())
