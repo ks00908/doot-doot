@@ -4,7 +4,6 @@ from discord.ext import commands
 
 
 async def play_file(self, voice_channel, filename):
-    print(f'{str(user)} is in {voice_channel}')
     voice_channel = await voice_channel.connect()
     source = discord.FFmpegPCMAudio(filename)
     voice_channel.play(source, after=lambda: print("played doot"))
@@ -27,6 +26,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
+            print(f'{str(user)} is in {voice_channel}')
             await play_file(ctx.author.voice.channel, "airhorn.mp3")
 
     @commands.command()
@@ -36,6 +36,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
+            print(f'{str(user)} is in {voice_channel}')
             await play_file(ctx.author.voice.channel, "bazinga.mp3")
 
 

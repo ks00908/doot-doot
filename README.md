@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/ks00908/doot-doot.svg?branch=master)](https://travis-ci.org/ks00908/doot-doot)
 
 # doot-doot
-A discord bot that play sound effects in voice channel on command.
+A Discord bot that play sound effects in voice channel on command.
 
 ## Current effect
 
@@ -20,7 +20,7 @@ Airhorn
   3. Replace 'token' in main.py with token
   4. Open CMD/PowerShell/Terminal and navigate to folder with bot files
   5. Type ``python main.py`` (if it will not work try ``python3.7 main.py``
-  6. Wait until bot logs in to discord
+  6. Wait until bot logs in to Discord
   
   
 ## Adding new sound effects
