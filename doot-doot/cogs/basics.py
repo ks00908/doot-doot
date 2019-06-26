@@ -57,8 +57,9 @@ class basics(commands.Cog):
     @commands.command()
     async def invite(self, ctx):
      """invite me to your server!"""
-     embed=discord.Embed(title="Inviting the bot is easy!", colour=discord.Colour(0x7289DA), url="https://discordapp.com", description="Invite doot-doot to your server using this handy link: [Discord bot invite Oauth](https://discordapp.com/oauth2/authorize?client_id=593170973193273344&permissions=3145984&scope=bot) \n if you don't see your server make sure you are logged to right account at [Discord web client](https://www.discordapp.com)", timestamp=datetime.datetime.utcfromtimestamp(1561488324))
-     await ctx.send(embed)
+     embed=discord.Embed(title="Inviting the bot is easy!", colour=discord.Colour(0x7289DA), description="Invite doot-doot to your server using this handy link: [Discord bot invite Oauth](https://discordapp.com/oauth2/authorize?client_id=593170973193273344&permissions=3145984&scope=bot) \n if you don't see your server make sure you are logged to right account at [Discord web client](https://www.discordapp.com)", timestamp=datetime.now())
+     embed.set_image(url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
+     await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(basics(bot))
