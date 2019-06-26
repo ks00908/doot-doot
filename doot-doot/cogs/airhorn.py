@@ -19,7 +19,7 @@ class airhorn(commands.Cog):
              vc = user.voice.channel
              print(f'{str(user)} is in {vc}')
              vc_channel = await vc.connect()
-             source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(executable="C:/ffmpeg/bin/ffmpeg.exe", source='airhorn.mp3'))
+             source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio('airhorn.mp3'))
              vc_channel.play(source, after=lambda: print("player doot"))
              await ctx.send(":thumbsup: dooted the doot")
              while vc_channel.is_playing():
@@ -40,7 +40,7 @@ class airhorn(commands.Cog):
              print(f'{str(user)} is in {vc}')
              vc_channel = await vc.connect()
              source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio('bazinga.mp3'))
-             vc_channel.play(source, after=lambda: print("player doot"))
+             vc_channel.play(source, after=lambda: print("played doot"))
              await ctx.send(":thumbsup: dooted the doot")
              while vc_channel.is_playing():
                  await asyncio.sleep(1)
