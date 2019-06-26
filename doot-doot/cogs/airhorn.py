@@ -3,7 +3,7 @@ import asyncio
 from discord.ext import commands
 
 
-async def play_file(self, ctx, filename):
+async def play_file(ctx, filename):
     voice_channel = ctx.author.voice.channel
     print(f'{str(ctx.author)} is in {voice_channel}')
 
