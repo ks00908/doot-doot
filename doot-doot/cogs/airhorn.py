@@ -3,7 +3,7 @@ import asyncio
 from discord.ext import commands
 
 
-async def play_file(self, voice_channel, filename):
+async def play_file(ctx, self, voice_channel, filename):
     print(f'{str(user)} is in {voice_channel}')
     voice_channel = await voice_channel.connect()
     source = discord.FFmpegPCMAudio(filename)
