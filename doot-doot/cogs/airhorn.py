@@ -11,7 +11,7 @@ async def play_file(ctx, filename):
     source = discord.FFmpegPCMAudio(filename)
 
     voice_channel.play(source, after=lambda: print("played doot"))
-
+    logger.info("user "+ctx.author+"Played "+filename+" in "+ctx.author.voice.channel)
     await ctx.send(":thumbsup: dooted the doot")
     while voice_channel.is_playing():
         await asyncio.sleep(1)
