@@ -10,12 +10,7 @@ import logging
 class basics(commands.Cog):
 
     def __init__(self, bot):
-        # creation of the cog, do init stuff here, also gets and stores the bot
         self.bot = bot
-
-    def __unload(self):
-        # cog unloading, cleaup if needed
-        pass
 
     @commands.command(hidden=True)
     @commands.is_owner()
@@ -36,14 +31,14 @@ class basics(commands.Cog):
     @commands.guild_only()
     @commands.is_owner()
     async def shutdown(self, ctx):
-        """kills the bot"""
+        """Kills the bot."""
         await ctx.send("you're such a turnoff")
         await self.bot.logout()
         await self.bot.close()
 
     @commands.command()
     async def ping(self, ctx: commands.Context):
-        """Shows the Gateway Ping"""
+        """Shows the Gateway Ping."""
         t1 = time.perf_counter()
         await ctx.trigger_typing()
         t2 = time.perf_counter()
@@ -51,15 +46,21 @@ class basics(commands.Cog):
 
     @commands.command()
     async def github(self, ctx):
-        """gives you my source code"""
-        await ctx.send("Want to report bug? \n submit feature request? \n make new feature? \n bot code is avaible on github page: \n <https://github.com/ks00908/doot-doot>")
+        """Gives you my source code."""
+        await ctx.send("Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is avaible on github page:\n<https://github.com/ks00908/doot-doot>")
 
     @commands.command()
     async def invite(self, ctx):
-     """invite me to your server!"""
-     embed=discord.Embed(title="Inviting the bot is easy!", colour=discord.Colour(0x7289DA), description="Invite doot-doot to your server using this handy link: [Discord bot invite Oauth](https://discordapp.com/oauth2/authorize?client_id=593170973193273344&permissions=3145984&scope=bot) \n if you don't see your server make sure you are logged to right account at [Discord web client](https://www.discordapp.com)", timestamp=datetime.now())
-     embed.set_image(url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
-     await ctx.send(embed=embed)
+        """Invite me to your server!"""
+        embed = discord.Embed(
+            title="Inviting the bot is easy!",
+            colour=0x7289DA,
+            description="Invite doot-doot to your server using this handy link: [Discord bot invite Oauth](https://discordapp.com/oauth2/authorize?client_id=593170973193273344&permissions=3145984&scope=bot)\nif you don't see your server make sure you are logged to right account at [Discord web client](https://www.discordapp.com)",
+            timestamp=datetime.now()
+        )
+        embed.set_image(url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
+        await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(basics(bot))
