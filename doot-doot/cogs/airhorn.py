@@ -3,23 +3,27 @@ import asyncio
 from discord.ext import commands
 
 async def play_file(ctx, filename):
-    voice_channel = ctx.author.voice.channel
-    print(f'{str(ctx.author)} is in {voice_channel}')
+     voice_channel = ctx.author.voice.channel
+     print(f'{str(ctx.author)} is in {voice_channel}')
+     try:
+         voice_channel = await voice_channel.connect()
+     except:
+         voice_channel.disconnect()
+         ctx.send("Exception occured, automatic process atempted to repair it, please try again.")
+     
+     source = discord.FFmpegPCMAudio(filename)
 
-    voice_channel = await voice_channel.connect()
-    source = discord.FFmpegPCMAudio(filename)
+
+     voice_channel.play(source, after=lambda: print("played doot"))
 
 
-    voice_channel.play(source, after=lambda: print("played doot"))
+     await ctx.send(":thumbsup: played the effect")
+     while voice_channel.is_playing():
+         await asyncio.sleep(1)
 
+     voice_channel.stop()
 
-    await ctx.send(":thumbsup: dooted the doot")
-    while voice_channel.is_playing():
-        await asyncio.sleep(1)
-
-    voice_channel.stop()
-
-    await voice_channel.disconnect()
+     await voice_channel.disconnect()
 
 
 class airhorn(commands.Cog):

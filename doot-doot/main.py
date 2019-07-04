@@ -23,7 +23,7 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 # prefix, description that appear in !help
-client = Bot(description="dooting on the haters", command_prefix="D.", pm_help=False)
+client = Bot(description="dooting on the haters | Prefix is D. | for list of commands use D.help", command_prefix="D.", pm_help=False)
 
 # Adding the cogs to the bot
 if __name__ == '__main__':
@@ -40,6 +40,6 @@ if __name__ == '__main__':
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user.name} (ID:{client.user.id}) | Connected to {len(client.guilds)} servers')
-    await client.change_presence(activity=discord.Game(name='Dooting on the haters'))
+    await client.change_presence(activity=discord.Game(name='Dooting on the haters | Prefix is D. | for list of commands use D.help'))
 
 client.run("token")
