@@ -48,6 +48,24 @@ class airhorn(commands.Cog):
             await ctx.send("You are not in a voice channel.")
         else:
             await play_file(ctx, "bazinga.mp3")
+               
+    @commands.command()
+    @commands.guild_only()
+    async def doot(self, ctx):
+        """Tells you to just do it."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "justdoit.mp3")
+               
+    @commands.command()
+    @commands.guild_only()
+    async def doot(self, ctx):
+        """Just some clapping."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "clap.mp3")
 
 
 def setup(bot):
