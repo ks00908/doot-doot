@@ -4,7 +4,10 @@ A Discord bot that play sound effects in voice channel on command.
 
 ## Current effect
 
-Airhorn
+* Airhorn
+* Bazinga
+* Clapping
+* Just do it
 
 ## Installation
 
@@ -25,9 +28,17 @@ Airhorn
 ## Adding new sound effects
 First of all make sure that you own the licence to any effect you want to add. Then feel free to fork the project and add the effect to your fork, if it works submit a pull request ATTACHING either proof of licence or source that it is Creative Commons
 [TEMPLATE](https://github.com/ks00908/doot-doot/blob/master/.github/ISSUE_TEMPLATE/effect-merge-request.md)
-
-
-
+### Syntax
+```py
+    @commands.command()
+    @commands.guild_only()
+    async def command_syntax(self, ctx):
+        """bot description in help"""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "filename.mp3")
+```
 ## Attributions
 
 Bot and support server images were created by freepick from www.flaticon.com and are under Creative Commons BY 3.0 licence
