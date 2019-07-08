@@ -51,7 +51,7 @@ class airhorn(commands.Cog):
                
     @commands.command()
     @commands.guild_only()
-    async def doot(self, ctx):
+    async def justdoit(self, ctx):
         """Tells you to just do it."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
@@ -60,7 +60,7 @@ class airhorn(commands.Cog):
                
     @commands.command()
     @commands.guild_only()
-    async def doot(self, ctx):
+    async def clap(self, ctx):
         """Just some clapping."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
