@@ -10,7 +10,7 @@ async def play_file(ctx, filename):
      except:
          voice_channel.disconnect()
          ctx.send("Exception occured, automatic process atempted to repair it, please try again.")
-     
+
      source = discord.FFmpegPCMAudio(filename)
 
 
@@ -48,7 +48,7 @@ class airhorn(commands.Cog):
             await ctx.send("You are not in a voice channel.")
         else:
             await play_file(ctx, "bazinga.mp3")
-               
+
     @commands.command()
     @commands.guild_only()
     async def justdoit(self, ctx):
@@ -57,7 +57,7 @@ class airhorn(commands.Cog):
             await ctx.send("You are not in a voice channel.")
         else:
             await play_file(ctx, "justdoit.mp3")
-               
+
     @commands.command()
     @commands.guild_only()
     async def clap(self, ctx):
@@ -67,6 +67,59 @@ class airhorn(commands.Cog):
         else:
             await play_file(ctx, "clap.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def oof(self, ctx):
+        """Roblox oof."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "oof.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def nope(self, ctx):
+        """Nope."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "nope.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def suspence(self, ctx):
+        """Sudden suspence."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "suddensus.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def sad(self, ctx):
+        """Plays sad music."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "sadmusic.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def fail(self, ctx):
+        """Plays fail sound."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "fail.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def gay(self, ctx):
+        """HA GAY."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "hagay.mp3")
 
 def setup(bot):
     bot.add_cog(airhorn(bot))
