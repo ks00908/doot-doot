@@ -1,4 +1,6 @@
-import discord, random, asyncio
+import discord
+import random
+import asyncio
 from discord.ext import commands
 
 async def play_file(ctx, filename):
@@ -6,20 +8,20 @@ async def play_file(ctx, filename):
     print(f'{str(ctx.author)} is in {voice_channel}')
     try:
         voice_channel = await voice_channel.connect()
-    except:
+    except Exception as e:
         voice_channel.disconnect()
-        ctx.send("Exception occured, automatic process atempted to repair it, please try again.")
+        ctx.send("Exception occured, automatic process " +
+        "atempted to repair it, please try again. | " + str(e))
 
-    # There is a 1 in 100th chance that it will do a rickroll instead of the desired sound
-    random = random.randint(1,100)
+    # There is a 1 in 100th chance that it
+    # will do a rickroll instead of the desired sound
+    random = random.randint(1, 100)
     if random == 1:
         source = discord.FFmpegPCMAudio("sounds/rickroll.mp3")
     else:
         source = discord.FFmpegPCMAudio(filename)
 
-
     voice_channel.play(source, after=lambda: print("played doot"))
-
 
     await ctx.send(":thumbsup: played the effect")
     while voice_channel.is_playing():
