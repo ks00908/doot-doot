@@ -129,7 +129,7 @@ class airhorn(commands.Cog):
             await ctx.send("You are not in a voice channel.")
         else:
             await play_file(ctx, "no.mp3")
-               
+
     @commands.command()
     @commands.guild_only()
     async def godno(self, ctx):
@@ -173,7 +173,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "reallynigga.mp3")
+            await play_file(ctx, "reallyn.mp3")
 
     @commands.command()
     @commands.guild_only()
