@@ -1,33 +1,36 @@
-import discord
-import asyncio
+import discord, random, asyncio
 from discord.ext import commands
 
 async def play_file(ctx, filename):
-     voice_channel = ctx.author.voice.channel
-     print(f'{str(ctx.author)} is in {voice_channel}')
-     try:
-         voice_channel = await voice_channel.connect()
-     except:
-         voice_channel.disconnect()
-         ctx.send("Exception occured, automatic process atempted to repair it, please try again.")
+    voice_channel = ctx.author.voice.channel
+    print(f'{str(ctx.author)} is in {voice_channel}')
+    try:
+        voice_channel = await voice_channel.connect()
+    except:
+        voice_channel.disconnect()
+        ctx.send("Exception occured, automatic process atempted to repair it, please try again.")
 
-     source = discord.FFmpegPCMAudio(filename)
+    # There is a 1 in 100th chance that it will do a rickroll instead of the desired sound
+    random = random.randint(1,100)
+    if random == 1:
+        source = discord.FFmpegPCMAudio("sounds/rickroll.mp3")
+    else:
+        source = discord.FFmpegPCMAudio(filename)
 
 
-     voice_channel.play(source, after=lambda: print("played doot"))
+    voice_channel.play(source, after=lambda: print("played doot"))
 
 
-     await ctx.send(":thumbsup: played the effect")
-     while voice_channel.is_playing():
-         await asyncio.sleep(1)
+    await ctx.send(":thumbsup: played the effect")
+    while voice_channel.is_playing():
+        await asyncio.sleep(1)
 
-     voice_channel.stop()
+    voice_channel.stop()
 
-     await voice_channel.disconnect()
+    await voice_channel.disconnect()
 
 
 class airhorn(commands.Cog):
-
     def __init__(self, bot):
         self.bot = bot
 
@@ -38,7 +41,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "airhorn.mp3")
+            await play_file(ctx, "sounds/airhorn.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -47,7 +50,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "bazinga.mp3")
+            await play_file(ctx, "sounds/bazinga.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -56,7 +59,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "justdoit.mp3")
+            await play_file(ctx, "sounds/justdoit.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -65,7 +68,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "clap.mp3")
+            await play_file(ctx, "sounds/clap.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -74,7 +77,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "oof.mp3")
+            await play_file(ctx, "sounds/oof.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -83,7 +86,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "nope.mp3")
+            await play_file(ctx, "sounds/nope.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -92,7 +95,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "suddensus.mp3")
+            await play_file(ctx, "sounds/suddensus.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -101,7 +104,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "sadmusic.mp3")
+            await play_file(ctx, "sounds/sadmusic.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -110,7 +113,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "fail.mp3")
+            await play_file(ctx, "sounds/fail.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -119,7 +122,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "hagay.mp3")
+            await play_file(ctx, "sounds/hagay.mp3")
 
 def setup(bot):
     bot.add_cog(airhorn(bot))
