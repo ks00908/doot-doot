@@ -121,5 +121,31 @@ class airhorn(commands.Cog):
         else:
             await play_file(ctx, "hagay.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def no(self, ctx):
+        """Says no."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "no.mp3")
+    @commands.command()
+    @commands.guild_only()
+    async def godno(self, ctx):
+        """plays No god no."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "godno.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def dootstorm(self, ctx):
+        """plays sands storm but with doot."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "dootstorm.mp3")
+
 def setup(bot):
     bot.add_cog(airhorn(bot))
