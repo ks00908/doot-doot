@@ -147,5 +147,68 @@ class airhorn(commands.Cog):
         else:
             await play_file(ctx, "dootstorm.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def WTF(self, ctx):
+        """plays Bish WTF."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "WTF.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def fuckedup(self, ctx):
+        """it was at this moment he knew he fucked up."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "fuckedup.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def reallynigga(self, ctx):
+        """really nigga."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "reallynigga.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def ohno(self, ctx):
+        """oh no no no."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "ohno.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def ohhh(self, ctx):
+        """ohhhhhhh."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "ohhh.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def thuglife(self, ctx):
+        """thug life."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "thuglife.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def horn(self, ctx):
+        """DJ horn."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "djhorn.mp3")
+
 def setup(bot):
     bot.add_cog(airhorn(bot))
