@@ -121,5 +121,15 @@ class airhorn(commands.Cog):
         else:
             await play_file(ctx, "hagay.mp3")
 
+
+    @commands.command()
+    @commands.guild_only()
+    async def phintro(self, ctx):
+        """Scare the s### out of your friends."""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "phintro.mp3")
+
 def setup(bot):
     bot.add_cog(airhorn(bot))
