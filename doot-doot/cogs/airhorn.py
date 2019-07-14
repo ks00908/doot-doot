@@ -48,7 +48,7 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def bazinga(self, ctx):
-        """Plays bazinga effect."""
+        """BAZINGA!"""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
@@ -66,7 +66,7 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def clap(self, ctx):
-        """Just some clapping."""
+        """..you did good. Here are some claps."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
@@ -102,7 +102,7 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def sad(self, ctx):
-        """Plays sad music."""
+        """The saddest music you've ever heard."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
@@ -111,7 +111,7 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def fail(self, ctx):
-        """Plays fail sound."""
+        """Wow.. you failed pretty bad tbh."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
@@ -120,7 +120,7 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def gay(self, ctx):
-        """HA GAY."""
+        """HAH. UR GAY."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
@@ -130,47 +130,47 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def no(self, ctx):
-        """Says no."""
+        """No."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "no.mp3")
+            await play_file(ctx, "sounds/no.mp3")
 
     @commands.command()
     @commands.guild_only()
     async def godno(self, ctx):
-        """plays No god no."""
+        """No.. GOD. NO."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "godno.mp3")
+            await play_file(ctx, "sounds/godno.mp3")
 
     @commands.command()
     @commands.guild_only()
     async def dootstorm(self, ctx):
-        """plays sands storm but with doot."""
+        """What song is this? Ah, it's Darude - Dootstorm."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "dootstorm.mp3")
+            await play_file(ctx, "sounds/dootstorm.mp3")
 
     @commands.command()
     @commands.guild_only()
     async def WTF(self, ctx):
-        """plays Bish WTF."""
+        """Bitch... what the fuck?"""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "WTF.mp3")
+            await play_file(ctx, "sounds/WTF.mp3")
 
     @commands.command()
     @commands.guild_only()
     async def fuckedup(self, ctx):
-        """it was at this moment he knew he fucked up."""
+        """it was at this moment he knew.. he fucked up."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "fuckedup.mp3")
+            await play_file(ctx, "sounds/fuckedup.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -179,7 +179,7 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "ohno.mp3")
+            await play_file(ctx, "sounds/ohno.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -188,16 +188,16 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "ohhh.mp3")
+            await play_file(ctx, "sounds/ohhh.mp3")
 
     @commands.command()
     @commands.guild_only()
     async def thuglife(self, ctx):
-        """thug life."""
+        """So you think you are living the thug life?"""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "thuglife.mp3")
+            await play_file(ctx, "sounds/thuglife.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -206,17 +206,17 @@ class airhorn(commands.Cog):
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "djhorn.mp3")
+            await play_file(ctx, "sounds/djhorn.mp3")
 
 
     @commands.command()
     @commands.guild_only()
     async def phintro(self, ctx):
-        """Scare the s### out of your friends."""
+        """i dare you, but don't come cry when you peed your pants."""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "phintro.mp3")
+            await play_file(ctx, "sounds/phintro.mp3")
 
 def setup(bot):
     bot.add_cog(airhorn(bot))
