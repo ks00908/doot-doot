@@ -169,15 +169,6 @@ class airhorn(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    async def reallynigga(self, ctx):
-        """really nigga."""
-        if not ctx.author.voice:
-            await ctx.send("You are not in a voice channel.")
-        else:
-            await play_file(ctx, "reallyn.mp3")
-
-    @commands.command()
-    @commands.guild_only()
     async def ohno(self, ctx):
         """oh no no no."""
         if not ctx.author.voice:
