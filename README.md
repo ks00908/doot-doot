@@ -37,7 +37,7 @@ First of all make sure that you own the licence to any effect you want to add. T
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
-            await play_file(ctx, "filename.mp3")
+            await play_file(ctx, "sounds/filename.mp3")
 ```
 ## Attributions
 
