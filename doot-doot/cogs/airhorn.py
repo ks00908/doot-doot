@@ -9,8 +9,8 @@ async def play_file(ctx, filename):
     try:
         voice_channel = await voice_channel.connect()
     except Exception as e:
-        voice_channel.disconnect()
-        ctx.send("Exception occured, automatic process " +
+        await voice_channel.disconnect()
+        await ctx.send("Exception occured, automatic process " +
         "atempted to repair it, please try again. | " + str(e))
 
     # There is a 1 in 100th chance that it
