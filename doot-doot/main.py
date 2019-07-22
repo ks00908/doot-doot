@@ -9,6 +9,15 @@ import traceback
 
 import logging
 
+#setting up configuration
+import json
+
+def getConfig(path):
+    configFile = open(path, "r")
+    return json.loads(configFile.read())
+
+config = getConfig("config.json")
+
 # Preparing the cogs
 initial_extensions = [
     'airhorn',
@@ -42,4 +51,4 @@ async def on_ready():
     print(f'Logged in as {client.user.name} (ID:{client.user.id}) | Connected to {len(client.guilds)} servers')
     await client.change_presence(activity=discord.Game(name='Dooting on the haters | Prefix is D. | for list of commands use D.help'))
 
-client.run("token")
+client.run(config['token'])
