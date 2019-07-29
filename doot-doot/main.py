@@ -44,7 +44,7 @@ if __name__ == '__main__':
             print(traceback.format_exc())
 
 # start of bot and event for config
-
+client.load_extension('jishaku')
 
 @client.event
 async def on_ready():
