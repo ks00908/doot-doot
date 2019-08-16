@@ -6,12 +6,12 @@ import time
 from datetime import datetime
 import logging
 
-
+# declaring Cog
 class basics(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-
+# defining owner only command to reload specific cog allowing to update in example airhorn.cog with new sounds without restarting whole bot
     @commands.command(hidden=True)
     @commands.is_owner()
     async def reload(self, ctx, *, cog: str):
@@ -27,6 +27,7 @@ class basics(commands.Cog):
         else:
             await ctx.send(f"I can't find that cog.")
 
+# owner only command to shutdown bot
     @commands.command()
     @commands.guild_only()
     @commands.is_owner()
