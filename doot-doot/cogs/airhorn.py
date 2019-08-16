@@ -3,6 +3,7 @@ import random
 import asyncio
 from discord.ext import commands
 
+# defining function to handle playing sounds in Voice Channel
 async def play_file(ctx, filename):
     voice_channel = ctx.author.voice.channel
     print(f'{str(ctx.author)} is in {voice_channel}')
@@ -31,7 +32,7 @@ async def play_file(ctx, filename):
 
     await voice_channel.disconnect()
 
-
+# Begining of commands
 class airhorn(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
