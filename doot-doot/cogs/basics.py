@@ -48,7 +48,7 @@ class basics(commands.Cog):
     @commands.command()
     async def github(self, ctx):
         """Gives you my source code."""
-        await ctx.send("Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is avaible on github page:\n<https://github.com/ks00908/doot-doot>")
+        await ctx.send("Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is available on github page:\n<https://github.com/ks00908/doot-doot>")
 
     @commands.command()
     async def invite(self, ctx):
