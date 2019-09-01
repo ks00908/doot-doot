@@ -6,12 +6,12 @@ import time
 from datetime import datetime
 import logging
 
-
+# declaring Cog
 class basics(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-
+# defining owner only command to reload specific cog allowing to update in example airhorn.cog with new sounds without restarting whole bot
     @commands.command(hidden=True)
     @commands.is_owner()
     async def reload(self, ctx, *, cog: str):
@@ -27,6 +27,7 @@ class basics(commands.Cog):
         else:
             await ctx.send(f"I can't find that cog.")
 
+# owner only command to shutdown bot
     @commands.command()
     @commands.guild_only()
     @commands.is_owner()
@@ -48,12 +49,12 @@ class basics(commands.Cog):
     async def github(self, ctx):
         """Gives you my source code."""
         embed = discord.Embed(
-            title="Github repository for DootDoot", colour=0x7289DA,description="Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is avaible on github page:\n<https://github.com/ks00908/doot-doot>")
+            title="Github repository for DootDoot", colour=0x7289DA,description="Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is available on github page:\n<https://github.com/ks00908/doot-doot>")
         embed.set_image(url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
         try:
          await ctx.send(embed=embed)
         except discord.Forbidden:
-         await ctx.send("Want to report bug?\nSubmit feature request?\nMake new feature?\nBot code is avaible on github page:\n<https://github.com/ks00908/doot-doot>")
+         await ctx.send("Want to report bug?\nSubmit feature request?\nMake new feature?\nBot code is available on github page:\n<https://github.com/ks00908/doot-doot>")
     
     
     @commands.command()

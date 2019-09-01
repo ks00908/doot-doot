@@ -43,9 +43,10 @@ if __name__ == '__main__':
             print(f"error occured while loading cog")
             print(traceback.format_exc())
 
-# start of bot and event for config
+# loading special extension for Eval
+client.load_extension('jishaku')
 
-
+#initiation of bot and logging in
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user.name} (ID:{client.user.id}) | Connected to {len(client.guilds)} servers')
