@@ -47,20 +47,29 @@ class basics(commands.Cog):
     @commands.command()
     async def github(self, ctx):
         """Gives you my source code."""
-        await ctx.send("Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is avaible on github page:\n<https://github.com/ks00908/doot-doot>")
-
+        embed = discord.Embed(
+            title="Github repository for DootDoot", colour=0x7289DA,description="Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is avaible on github page:\n<https://github.com/ks00908/doot-doot>")
+        embed.set_image(url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
+        try:
+         await ctx.send(embed=embed)
+        except discord.Forbidden:
+         await ctx.send("Want to report bug?\nSubmit feature request?\nMake new feature?\nBot code is avaible on github page:\n<https://github.com/ks00908/doot-doot>")
+    
+    
     @commands.command()
     async def invite(self, ctx):
         """Invite me to your server!"""
         embed = discord.Embed(
             title="Inviting the bot is easy!",
             colour=0x7289DA,
-            description="Invite doot-doot to your server using this handy link: [Discord bot invite Oauth](https://discordapp.com/oauth2/authorize?client_id=593170973193273344&permissions=3145984&scope=bot)\nif you don't see your server make sure you are logged to right account at [Discord web client](https://www.discordapp.com)",
+            description="Invite doot-doot to your server using this handy link: [Discord bot invite Oauth](https://discordapp.com/oauth2/authorize?client_id=593170973193273344&scope=bot&permissions=3165184)\nif you don't see your server make sure you are logged to right account at [Discord web client](https://www.discordapp.com)",
             timestamp=datetime.now()
         )
         embed.set_image(url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
-        await ctx.send(embed=embed)
-
+        try:
+         await ctx.send(embed=embed)
+        except discord.Forbidden:
+            await ctx.send("There was an error sending Embed with bot invite. please check if bot has permission to embed links")
 
 def setup(bot):
     bot.add_cog(basics(bot))
