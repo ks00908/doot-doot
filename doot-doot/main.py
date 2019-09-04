@@ -21,7 +21,9 @@ config = getConfig("config.json")
 # Preparing the cogs
 initial_extensions = [
     'airhorn',
-    'basics'
+    'basics',
+    'jishaku',
+    'fun'
 ]
 
 # setting up logger
