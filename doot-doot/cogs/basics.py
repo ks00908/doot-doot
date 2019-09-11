@@ -71,5 +71,18 @@ class basics(commands.Cog):
         except discord.Forbidden:
             await ctx.send("There was an error sending Embed with bot invite. please check if bot has permission to embed links")
 
+    @commands.command()
+    async def patreon(self, ctx):
+        """Optional support? thats great! No worry though, there wont be paywalls"""
+        embed = discord.Embed(
+            title="Patreon!",
+            colour=0x7289DA,
+            description="Hi. \nSo i noticed you took intrest in Patreon command.\nCase is simple, it is purely optional, you wont gain real perks apart from role on server and faster looking into feature requests.\n However, every dollar of support helps me keep bots afloat and helps me expand my knowledge.\n As i said many times there won't be any paywall on features, I won't EVER require you to pay for feature on official bot.\n Patreon link: https://www.patreon.com/ksmakesbots \n Once again, thank you for any support, including warm words or anything.\n\n   Krzysztof \"ks\" Szypuła"
+        )
+        try:
+         await ctx.send(embed=embed)
+        except discord.Forbidden:
+            await ctx.send("Bot cannot send embed. Please make sure bot has Embed links permission")
+
 def setup(bot):
     bot.add_cog(basics(bot))
