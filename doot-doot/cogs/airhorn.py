@@ -9,6 +9,8 @@ async def play_file(ctx, filename):
     print(f'{str(ctx.author)} is in {voice_channel}')
     try:
      voice_channel = await voice_channel.connect()
+        
+    # catching most common errors that can occur while playing effects
     except discord.Forbidden:
      await ctx.send("Command raised error \"403 Forbidden\". Please check if bot has permission to join and speak in voice channel")
     except TimeoutError:
@@ -24,10 +26,13 @@ async def play_file(ctx, filename):
     else:
         try:
          source = discord.FFmpegPCMAudio(filename)
+        
+        # edge case: missing file error
         except FileNotFoundError:
             await ctx.send("There was an issue with playing sound: File Not Found. Its possible that host of bot forgot to copy over a file. If this error occured on official bot please use D.github to report issue.")
     try: 
         voice_channel.play(source, after=lambda: print("played doot"))
+    # catching most common errors that can occur while playing effects
     except discord.Forbidden:
      await ctx.send("There was issue playing a sound effect. please check if bot has speak permission")
     except TimeoutError:
