@@ -1,0 +1,4 @@
+{
+  "token": "discord auth token",
+  "log_channel": 01234567890
+}

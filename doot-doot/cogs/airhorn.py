@@ -8,22 +8,38 @@ async def play_file(ctx, filename):
     voice_channel = ctx.author.voice.channel
     print(f'{str(ctx.author)} is in {voice_channel}')
     try:
-        voice_channel = await voice_channel.connect()
-    except Exception as e:
-        await voice_channel.disconnect()
-        await ctx.send("Exception occured, automatic process " +
-        "atempted to repair it, please try again. | " + str(e))
-
+     voice_channel = await voice_channel.connect()
+        
+    # catching most common errors that can occur while playing effects
+    except discord.Forbidden:
+     await ctx.send("Command raised error \"403 Forbidden\". Please check if bot has permission to join and speak in voice channel")
+    except TimeoutError:
+     await ctx.send("There was an error while joining channel (Timeout). It's possible that either Discord API or bot host has latency/connection issues. Please try again later.")
+    except Exception:
+     await ctx.send("There was an error procesisng your request. Please try again")
+    
     # There is a 1 in 100th chance that it
     # will do a rickroll instead of the desired sound
     randomChance = random.randint(1, 100)
     if randomChance == 1:
         source = discord.FFmpegPCMAudio("sounds/rickroll.mp3")
     else:
-        source = discord.FFmpegPCMAudio(filename)
-
-    voice_channel.play(source, after=lambda: print("played doot"))
-
+        try:
+         source = discord.FFmpegPCMAudio(filename)
+        
+        # edge case: missing file error
+        except FileNotFoundError:
+            await ctx.send("There was an issue with playing sound: File Not Found. Its possible that host of bot forgot to copy over a file. If this error occured on official bot please use D.github to report issue.")
+    try: 
+        voice_channel.play(source, after=lambda: print("played doot"))
+    # catching most common errors that can occur while playing effects
+    except discord.Forbidden:
+     await ctx.send("There was issue playing a sound effect. please check if bot has speak permission")
+    except TimeoutError:
+     await ctx.send("There was a error while attempting to play sound effect (Timeout) its possible that either discord API or bot host has latency or network issues")
+    except Exception:
+     await ctx.send("There was an issue playing sound. Please try again later.")
+    
     await ctx.send(":thumbsup: played the effect")
     while voice_channel.is_playing():
         await asyncio.sleep(1)
