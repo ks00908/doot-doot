@@ -14,9 +14,9 @@ async def play_file(ctx, filename):
     except discord.Forbidden:
      await ctx.send("Command raised error \"403 Forbidden\". Please check if bot has permission to join and speak in voice channel")
     except TimeoutError:
-     await ctx.send("There was an error while joining channel (Timeout). It's possible that either Discord API or bot host has latency/connection issues. Please try again later.")
+     await ctx.send("There was an error while joining channel (Timeout). It's possible that either Discord API or bot host has latency/connection issues. Please try again later if issues will continue contact bot owner.")
     except Exception:
-     await ctx.send("There was an error procesisng your request. Please try again")
+     await ctx.send("There was an error procesisng your request. Please try again. If issues will continue contact bot owner.")
     
     # There is a 1 in 100th chance that it
     # will do a rickroll instead of the desired sound
@@ -36,9 +36,9 @@ async def play_file(ctx, filename):
     except discord.Forbidden:
      await ctx.send("There was issue playing a sound effect. please check if bot has speak permission")
     except TimeoutError:
-     await ctx.send("There was a error while attempting to play sound effect (Timeout) its possible that either discord API or bot host has latency or network issues")
+     await ctx.send("There was a error while attempting to play sound effect (Timeout) its possible that either discord API or bot host has latency or network issues. Please try again later, if issues will continue contact bot owner")
     except Exception:
-     await ctx.send("There was an issue playing sound. Please try again later.")
+     await ctx.send("There was an issue playing sound. Please try again later. If issues will continue contact bot owner.")
     
     await ctx.send(":thumbsup: played the effect")
     while voice_channel.is_playing():
@@ -137,7 +137,7 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def gay(self, ctx):
-        """HAH. UR GAY."""
+        """HA Gay sound effect"""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:
@@ -229,7 +229,7 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def phintro(self, ctx):
-        """i dare you, but don't come cry when you peed your pants."""
+        """Sound Effect from intro of popular xxx website (no actuall 18+ content present)"""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
         else:

@@ -29,9 +29,9 @@ class fun(commands.Cog):
      except discord.Forbidden:
          await ctx.send("Bot appears to not have 'Embed Links' permission required for urban command. Please allow dootdoot to embed links as it is required to send Rich Embeds")
      except TimeoutError:
-         await ctx.send("There was a timeout error. its possible that either host, discord api or Urban Dictionary have curently issues. Please try again")
+         await ctx.send("There was a timeout error. its possible that either host, discord api or Urban Dictionary have curently issues. Please try again later and if issues continue contact bot owner.")
      except Exception:
-         await ctx.send("There was an issue handling your request. Please try again later.")
+         await ctx.send("There was an issue handling your request. Please try again later and if issues continue contact bot owner.")
 
  @commands.command()
  async def xkcd(self, ctx):
@@ -49,9 +49,9 @@ class fun(commands.Cog):
      except discord.Forbidden:
          await ctx.send("Failed to send embed. Please make sure bot has 'Link Embeds' permission then try again")
      except TimeoutError:
-         await ctx.send("There was a timeout while performing this command. Please try again.")
+         await ctx.send("There was a timeout while performing this command. Please try again later and if issues continue contact bot owner.")
      except Exception:
-         await ctx.send("There was an exception while handling your request. Please try again later.")
+         await ctx.send("There was an exception while handling your request. Please try again later and if issues continue contact bot owner.")
 
 def setup(bot):
  bot.add_cog(fun(bot))

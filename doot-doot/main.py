@@ -67,16 +67,11 @@ async def on_guild_join(guild):
  await channel.send(embed=embed)
 
 
-@client.event
-async def on_guild_leave(guild):
- logschannel = config['log_channel']
- guildid = str(guild.id)
- ownerid = str(guild.owner)
- guildname = str(guild.name)
- channel = client.get_channel(logschannel)
- embed = discord.Embed(title="Bot was added to new server", colour=discord.Colour(0x1738d4), description="DootDoot was added to new server\n"+guildid+"\nowned by "+ownerid+"\nguild name: "+guildname, timestamp=datetime.now())
- embed.set_thumbnail(url="https://cdn1.iconfinder.com/data/icons/interface-elements-ii-1/512/Logout-512.png")
-
- await channel.send(embed=embed)
+client.event
+async def on_guild_remove(guild):
+    ch = client.get_channel(config['log_channel'])
+    embed = discord.Embed(title="Bot left server", colour=discord.Colour(0x1738d4), description="DootDoot was added to new server\n{} ({})\nOwned by {} ({})".format(guild.name, guild.id, str(guild.owner), guild.owner.id), timestamp=datetime.now())
+    embed.set_thumbnail(url="https://cdn1.iconfinder.com/data/icons/interface-elements-ii-1/512/Logout-512.png")
+    await ch.send(embed=embed)
 
 client.run(config['token'])
