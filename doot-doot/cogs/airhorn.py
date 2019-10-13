@@ -235,5 +235,16 @@ class airhorn(commands.Cog):
         else:
             await play_file(ctx, "sounds/phintro.mp3")
 
+
+
+    @commands.command()
+    @commands.guild_only()
+    async def command_syntax(self, ctx):
+        """👏meme👏review"""
+        if not ctx.author.voice:
+            await ctx.send("You are not in a voice channel.")
+        else:
+            await play_file(ctx, "sounds/meme-review.mp3")
+
 def setup(bot):
     bot.add_cog(airhorn(bot))
