@@ -42,7 +42,7 @@ if __name__ == '__main__':
         try:
             client.load_extension("cogs." + extension)
         except Exception as e:
-            print(f"error occured while loading cog")
+            print(f"error occured while loading cog {extension}")
             print(traceback.format_exc())
 
 # loading special extension for Eval
