@@ -84,5 +84,16 @@ class basics(commands.Cog):
         except discord.Forbidden:
             await ctx.send("Bot cannot send embed. Please make sure bot has Embed links permission")
 
+            
+    @commands.command()
+    @commands.is_owner()
+    async def changepresence(self,ctx,*, content):
+     """Changing bots presence"""
+     if len(content) > 0:
+         await self.bot.change_presence(activity=discord.Game(name=content))
+         await ctx.send("Presence sucesfully changed to\n ```"+content+"```")
+     else:
+         await ctx.send("Presence cannot be empty string")
+            
 def setup(bot):
     bot.add_cog(basics(bot))
