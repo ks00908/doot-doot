@@ -2,12 +2,6 @@
 # doot-doot
 A Discord bot that play sound effects in voice channel on command.
 
-## Current effect
-
-* Airhorn
-* Bazinga
-* Clapping
-* Just do it
 
 ## Installation
 
@@ -33,11 +27,8 @@ First of all make sure that you own the licence to any effect you want to add. T
     @commands.command()
     @commands.guild_only()
     async def command_syntax(self, ctx):
-        """bot description in help"""
-        if not ctx.author.voice:
-            await ctx.send("You are not in a voice channel.")
-        else:
-            await play_file(ctx, "sounds/filename.mp3")
+        """command_description"""
+        await play_file(ctx, "sounds/file_name.mp3")
 ```
 ## Attributions
 
