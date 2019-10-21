@@ -9,6 +9,7 @@ A Discord bot that play sound effects in voice channel on command.
   * Python 3.7
   * Discord.py rewrite library
   * Discord bot account with token (obtainable through the [Discord Developer Portal](https://discordapp.com/developers/applications/))
+  * aiohttp library
   
 ### Starting bot:
   1. Install pre-requisites
