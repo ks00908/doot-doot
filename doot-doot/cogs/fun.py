@@ -3,7 +3,7 @@ import asyncio
 from discord.ext.commands import Bot
 from discord.ext import commands
 from urbandictionary_top import udtop
-import requests
+import aiohttp
 from utils.Fr13nd5h1p import Fr13nd5sh1p
 
 
@@ -44,22 +44,25 @@ class fun(commands.Cog):
         """Lists curently most recent xkcd comic"""
         api_url = "https://xkcd.com/info.0.json"
 
-        r = requests.get(api_url)
-        data = r.json()
-        image_title = data["title"]
-        image_url = data["img"]
-        embed = discord.Embed(title=image_title, colour=0x2773cc)
-        embed.set_image(url=image_url)
-        try:
-            await ctx.send(embed=embed)
-        except discord.Forbidden:
-            await ctx.send("Failed to send embed. Please make sure bot has 'Link Embeds' permission then try again")
-        except TimeoutError:
-            await ctx.send(
-                "There was a timeout while performing this command. Please try again later and if issues continue contact bot owner.")
-        except Exception:
-            await ctx.send(
-                "There was an exception while handling your request. Please try again later and if issues continue contact bot owner.")
+        async with aiohttp.ClientSession() as session:
+            async with session.get(api_url) as response:
+                data = await response.json()
+
+                image_title = data["title"]
+                image_url = data["img"]
+                embed = discord.Embed(title=image_title, colour=0x2773cc)
+                embed.set_image(url=image_url)
+                try:
+                    await ctx.send(embed=embed)
+                except discord.Forbidden:
+                    await ctx.send(
+                        "Failed to send embed. Please make sure bot has 'Link Embeds' permission then try again")
+                except TimeoutError:
+                    await ctx.send(
+                        "There was a timeout while performing this command. Please try again later and if issues continue contact bot owner.")
+                except Exception:
+                    await ctx.send(
+                        "There was an exception while handling your request. Please try again later and if issues continue contact bot owner.")
 
     @commands.command()
     async def hug(self, ctx, target: discord.Member = None):
