@@ -239,7 +239,7 @@ class airhorn(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    async def command_syntax(self, ctx):
+    async def memereview(self, ctx):
         """👏meme👏review"""
         if not ctx.author.voice:
             await ctx.send("You are not in a voice channel.")
