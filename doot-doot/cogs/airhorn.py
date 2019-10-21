@@ -196,6 +196,12 @@ class airhorn(commands.Cog):
     async def memereview(self, ctx):
         """👏meme👏review"""
         await play_file(ctx, "sounds/meme-review.mp3")
+        
+    @commands.command()
+    @commands.guild_only()
+    async def hero(self, ctx):
+        """the one and only hero"""
+        await play_file(ctx, "sounds/rickroll.mp3")
 
 def setup(bot):
     bot.add_cog(airhorn(bot))
