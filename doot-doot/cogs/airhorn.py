@@ -85,7 +85,7 @@ class airhorn(commands.Cog):
     @commands.guild_only()
     async def justdoit(self, ctx):
         """Tells you to just do it."""
-       await play_file(ctx, "sounds/justdoit.mp3")
+        await play_file(ctx, "sounds/justdoit.mp3")
 
     @commands.command()
     @commands.guild_only()
@@ -196,6 +196,23 @@ class airhorn(commands.Cog):
     async def memereview(self, ctx):
         """👏meme👏review"""
         await play_file(ctx, "sounds/meme-review.mp3")
+   
+    @commands.command()
+    @commands.guild_only()
+    async def spongebob(self, ctx):
+        """this IS whole intro song from Spongebob, play at your discretion"""
+        await play_file(ctx, "sounds/spongebob.mp3")
+    
+    @commands.command()
+    @commands.guild_only()
+    async def mariocoin(self, ctx):
+        """Ding!"""
+        await play_file(ctx, "sounds/mario_coin.mp3")
+    @commands.command()
+    @commands.guild_only()
+    async def honk(self, ctx):
+        """Honk Honk!"""
+        await play_file(ctx, "sounds/honk.mp3")
 
 def setup(bot):
     bot.add_cog(airhorn(bot))

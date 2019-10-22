@@ -1,4 +1,5 @@
 {
   "token": "discord auth token",
-  "log_channel": 01234567890
+  "log_channel": 01234567890,
+  "prefix": "d."
 }

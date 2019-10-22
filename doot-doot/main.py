@@ -34,7 +34,7 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 # prefix, description that appear in !help
-client = Bot(description="dooting on the haters | The Soundboard | 1 in 100 chance to be rickrolled for free when using bot!", command_prefix="D.", pm_help=False)
+client = Bot(description="dooting on the haters | The Soundboard | 1 in 100 chance to be rickrolled for free when using bot!", command_prefix=config['prefix'], pm_help=False)
 
 # Adding the cogs to the bot
 if __name__ == '__main__':

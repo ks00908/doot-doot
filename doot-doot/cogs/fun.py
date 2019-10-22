@@ -20,24 +20,24 @@ class fun(commands.Cog):
     @commands.command()
     async def urban(self, ctx, message):
         """Gives the Urban Dictionary result of the given word"""
-        try:
-            term = udtop(message)
-            if term == None:
-                await ctx.send("No result was returned")
-            else:
-                embed = discord.Embed(title=message + ":", colour=discord.Colour(0x2773cc),
+        if ctx.channel.is_nsfw():
+             try:
+                 term = udtop(message)
+                 if term == None:
+                     await ctx.send("No result was returned")
+                 else:
+                     embed = discord.Embed(title=message + ":", colour=discord.Colour(0x2773cc),
                                       description=term.definition + "\n\n examples: \n" + term.example)
-                embed.set_footer(text="powered by urbandictionary.com", icon_url="https://i.imgur.com/RvNANOu.png")
-                await ctx.send(content="", embed=embed)
-        except discord.Forbidden:
-            await ctx.send(
-                "Bot appears to not have 'Embed Links' permission required for urban command. Please allow dootdoot to embed links as it is required to send Rich Embeds")
-        except TimeoutError:
-            await ctx.send(
-                "There was a timeout error. its possible that either host, discord api or Urban Dictionary have curently issues. Please try again later and if issues continue contact bot owner.")
-        except Exception:
-            await ctx.send(
-                "There was an issue handling your request. Please try again later and if issues continue contact bot owner.")
+                     embed.set_footer(text="powered by urbandictionary.com", icon_url="https://i.imgur.com/RvNANOu.png")
+                     await ctx.send(content="", embed=embed)
+             except discord.Forbidden:
+                 await ctx.send("Bot appears to not have 'Embed Links' permission required for urban command. Please allow dootdoot to embed links as it is required to send Rich Embeds")
+             except TimeoutError:
+                 await ctx.send("There was a timeout error. its possible that either host, discord api or Urban Dictionary have curently issues. Please try again later and if issues continue contact bot owner.")
+             except Exception:
+                 await ctx.send("There was an issue handling your request. Please try again later and if issues continue contact bot owner.")
+        else:
+             await ctx.send("Due to nature of Urban dictionary messages it is required to use this command in NSFW channel")        
 
     @commands.command()
     async def xkcd(self, ctx):

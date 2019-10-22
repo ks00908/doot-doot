@@ -87,7 +87,7 @@ class basics(commands.Cog):
             
     @commands.command()
     @commands.is_owner()
-    async def changepresence(self,ctx,*, content):
+    async def setpresence(self,ctx,*, content):
      """Changing bots presence"""
      if len(content) > 0:
          await self.bot.change_presence(activity=discord.Game(name=content))
