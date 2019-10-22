@@ -8,12 +8,12 @@ async def play_file(ctx, filename):
     if not ctx.author.voice:
         await ctx.send("You are not in a voice channel.")
         return
-    
+
     voice_channel = ctx.author.voice.channel
     print(f'{str(ctx.author)} is in {voice_channel}')
     try:
      voice_channel = await voice_channel.connect()
-        
+
     # catching most common errors that can occur while playing effects
     except discord.Forbidden:
      await ctx.send("Command raised error \"403 Forbidden\". Please check if bot has permission to join and speak in voice channel")
@@ -27,7 +27,7 @@ async def play_file(ctx, filename):
     except Exception:
      await ctx.send("There was an error procesisng your request. Please try again. If issues will continue contact bot owner.")
      return
-    
+
     # There is a 1 in 100th chance that it
     # will do a rickroll instead of the desired sound
     randomChance = random.randint(1, 100)
@@ -36,11 +36,11 @@ async def play_file(ctx, filename):
     else:
         try:
          source = discord.FFmpegPCMAudio(filename)
-        
+
         # edge case: missing file error
         except FileNotFoundError:
             await ctx.send("There was an issue with playing sound: File Not Found. Its possible that host of bot forgot to copy over a file. If this error occured on official bot please use D.github to report issue.")
-    try: 
+    try:
         voice_channel.play(source, after=lambda: print("played doot"))
     # catching most common errors that can occur while playing effects
     except discord.Forbidden:
@@ -55,7 +55,7 @@ async def play_file(ctx, filename):
      await ctx.send("There was an issue playing the sound. Please try again later. If issues will continue contact bot owner.")
      await voice_channel.disconnect()
      return
-    
+
     await ctx.send(":thumbsup: played the effect")
     while voice_channel.is_playing():
         await asyncio.sleep(1)

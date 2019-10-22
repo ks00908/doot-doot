@@ -2,3 +2,4 @@ discord==1.0.1
 ffmpeg-normalize
 jishaku
 urbandictionary_top
+aiohttp==3.5.4
