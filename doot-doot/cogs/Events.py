@@ -21,8 +21,8 @@ class events(commands.Cog):
 
     @client.event
     async def on_server_join(self, guild):
-        logschannel = config['log_channel']
-        channel = self.bot.get_channel(logschannel)
+        logs_channel = config['log_channel']
+        channel = self.bot.get_channel(logs_channel)
         embed = discord.Embed(title="Bot was added to new server", colour=discord.Colour(0x1738d4), description="DootDoot was added to new server\n"+guild.id+" owned by "+guild.owner, timestamp=datetime.now())
         #embed.set_thumbnail(url="https://cdn.discordapp.com/embed/avatars/0.png")
 

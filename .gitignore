@@ -1,3 +1,7 @@
+# Custom
+doot-doot/config.json
+logs/
+
 # JetBrains PyCharm
 .idea/
 # Byte-compiled / optimized / DLL files
@@ -104,4 +108,3 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-doot-doot/config.json
