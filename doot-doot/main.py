@@ -68,7 +68,7 @@ async def on_guild_join(guild):
 async def on_guild_remove(guild):
     ch = client.get_channel(config['log_channel'])
     embed = discord.Embed(title="Bot left server", colour=discord.Colour(0x1738d4),
-                          description="DootDoot was added to new server\n{} ({})\n"
+                          description="DootDoot was removed from a server\n{} ({})\n"
                                       "Owned by {} ({})".format(guild.name, guild.id, str(guild.owner),
                                                                 guild.owner.id),
                           timestamp=datetime.utcnow())
