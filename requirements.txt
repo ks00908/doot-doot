@@ -1,5 +1,6 @@
-discord==1.0.1
+discord.py==1.2.4
 ffmpeg-normalize
 jishaku
 urbandictionary_top
 aiohttp==3.5.4
+PyNaCl
