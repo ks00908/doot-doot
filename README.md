@@ -21,8 +21,7 @@ A Discord bot that play sound effects in voice channel on command.
   
   
 ## Adding new sound effects
-First of all make sure that you own the licence to any effect you want to add. Then feel free to fork the project and add the effect to your fork, if it works submit a pull request ATTACHING either proof of licence or source that it is Creative Commons
-[TEMPLATE](https://github.com/ks00908/doot-doot/blob/master/.github/ISSUE_TEMPLATE/effect-merge-request.md)
+Replace command_syntax and file_name respectively with: command used to play sound and filename of sound
 ### Syntax
 ```py
     @commands.command()
