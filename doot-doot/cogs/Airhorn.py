@@ -232,7 +232,7 @@ class Airhorn(commands.Cog):
     @commands.guild_only()
     async def nofreakingway(self, ctx):
         """From the Megamind (2010) movie soundboard."""
-        await play_file(ctx, "sounds/no-freaking-way!.mp3")
+        await play_file(ctx, "sounds/no-freaking-way.mp3")
 
 def setup(bot):
     bot.add_cog(Airhorn(bot))
