@@ -228,7 +228,7 @@ class Airhorn(commands.Cog):
         """Honk Honk!"""
         await play_file(ctx, "sounds/honk.mp3")
 
-   @commands.command()
+    @commands.command()
     @commands.guild_only()
     async def nofreakingway(self, ctx):
         """From the Megamind (2010) movie soundboard."""
