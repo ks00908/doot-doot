@@ -308,6 +308,17 @@ class Airhorn(commands.Cog):
         """teamwork"""
         await play_file(ctx, "sounds/teamwork.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def teamwork(self, ctx):
+        """nice"""
+        await play_file(ctx, "sounds/nice.mp3")
+	
+    @commands.command()
+    @commands.guild_only()
+    async def teamwork(self, ctx):
+        """verynice"""
+        await play_file(ctx, "sounds/verynice.mp3")
 
 def setup(bot):
     bot.add_cog(Airhorn(bot))
