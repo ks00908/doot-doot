@@ -284,9 +284,15 @@ class Airhorn(commands.Cog):
 
     @commands.command(name='#teamwork')
     @commands.guild_only()
-    async def teamwork(self, ctx):
+    async def hashtag_teamwork(self, ctx):
         """#teamwork"""
         await play_file(ctx, "sounds/hashtag-teamwork.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def teamwork(self, ctx):
+        """teamwork"""
+        await play_file(ctx, "sounds/teamwork.mp3")
 
 
 def setup(bot):
