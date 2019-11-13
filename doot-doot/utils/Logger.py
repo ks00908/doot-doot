@@ -79,6 +79,7 @@ def logDebug(message, level="INFO"):
 
 
 async def logCommand(commandName, ctx, level="INFO"):
+    pass
     # lol, turn off logging
     # if isinstance(ctx.message.channel, discord.DMChannel):
     #     await log(ctx.author.name + "#" + ctx.author.discriminator + " just ran the " + commandName + " command",
