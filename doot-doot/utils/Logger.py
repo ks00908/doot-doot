@@ -79,11 +79,12 @@ def logDebug(message, level="INFO"):
 
 
 async def logCommand(commandName, ctx, level="INFO"):
-    if isinstance(ctx.message.channel, discord.DMChannel):
-        await log(ctx.author.name + "#" + ctx.author.discriminator + " just ran the " + commandName + " command",
-                  ctx.bot, level)
-    else:
-        await log(
-            ctx.author.name + "#" + ctx.author.discriminator + " just ran the " + commandName + " command, in the channel #" + ctx.channel.name + " (`" + str(
-                ctx.channel.id) + "`), in the guild " + ctx.guild.name + " (`" + str(ctx.guild.id) + "`)", ctx.bot,
-            level)
+    # lol, turn off logging
+    # if isinstance(ctx.message.channel, discord.DMChannel):
+    #     await log(ctx.author.name + "#" + ctx.author.discriminator + " just ran the " + commandName + " command",
+    #               ctx.bot, level)
+    # else:
+    #     await log(
+    #         ctx.author.name + "#" + ctx.author.discriminator + " just ran the " + commandName + " command, in the channel #" + ctx.channel.name + " (`" + str(
+    #             ctx.channel.id) + "`), in the guild " + ctx.guild.name + " (`" + str(ctx.guild.id) + "`)", ctx.bot,
+    #         level)
