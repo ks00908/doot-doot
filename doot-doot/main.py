@@ -1,6 +1,8 @@
 # Setting up configuration
 import json
 import traceback
+import utils
+
 from datetime import datetime
 
 import discord
@@ -31,7 +33,6 @@ client = Bot(
 # Loading special extension for Eval
 client.load_extension('jishaku')
 
-
 # Initialization of bot and logging in
 @client.event
 async def on_ready():
@@ -42,7 +43,7 @@ async def on_ready():
                      f'Logged in as {client.user.name} (ID: {client.user.id}) | Connected to {len(client.guilds)} '
                      f'servers with a total of {len(client.users)} users')
     await client.change_presence(activity=discord.Game(
-        name='Dooting on the haters | Prefix is ' + config['prefix'] + ' | List of commands under ' + config[
+        name='Doot Doot Motherfucker | Prefix is ' + config['prefix'] + ' | List of commands under ' + config[
             'prefix'] + 'help'))
 
 
