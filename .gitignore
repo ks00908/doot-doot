@@ -108,3 +108,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+doot-doot/sounds/.DS_Store
+doot-doot/sounds/aviation/.DS_Store
+doot-doot/.DS_Store

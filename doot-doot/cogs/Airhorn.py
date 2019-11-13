@@ -111,6 +111,13 @@ class Airhorn(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
+    async def aviation(self, ctx):
+        """Aviation."""
+        filename = random.choice(os.listdir("sounds/aviation"))
+        await play_file(ctx, "sounds/aviation/" + filename)
+
+    @commands.command()
+    @commands.guild_only()
     async def doot(self, ctx):
         """Doots the horn."""
         await play_file(ctx, "sounds/airhorn.mp3")
