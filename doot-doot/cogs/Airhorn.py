@@ -264,6 +264,24 @@ class Airhorn(commands.Cog):
         """yee"""
         await play_file(ctx, "sounds/yee.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def birdup(self, ctx):
+        """birdup"""
+        await play_file(ctx, "sounds/bird-up-short.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def birdupmedium(self, ctx):
+        """birdup, medium length"""
+        await play_file(ctx, "sounds/bird-up-medium.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def birduplong(self, ctx):
+        """birdup, long length"""
+        await play_file(ctx, "sounds/bird-up-long.mp3")
+
 
 def setup(bot):
     bot.add_cog(Airhorn(bot))
