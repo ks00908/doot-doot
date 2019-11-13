@@ -1,0 +1,20 @@
+on: 
+  push:
+    branches: 
+      - master
+name: Upload Files to DH
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: toledo.dreamhost.com
+        FTP_USERNAME: jaredwooden@toledo.dreamhost.com
+        FTP_PASSWORD: ${{ secrets.DH_PROD_FTP_PW }}
+        REMOTE_DIR: /home/robbiechatbot/doot-doot/
+        ARGS: --delete
+        # --delete arg will delete files on the server if you've deleted them in git
