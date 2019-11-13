@@ -310,13 +310,13 @@ class Airhorn(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    async def teamwork(self, ctx):
+    async def nice(self, ctx):
         """nice"""
         await play_file(ctx, "sounds/nice.mp3")
 	
     @commands.command()
     @commands.guild_only()
-    async def teamwork(self, ctx):
+    async def verynice(self, ctx):
         """verynice"""
         await play_file(ctx, "sounds/verynice.mp3")
 
