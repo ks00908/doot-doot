@@ -81,14 +81,14 @@ async def play_file(ctx, filename):
 
     await voice_channel.disconnect()
 
-def getSoundFiles():
+def getListOfAliases():
 	f = []
 	dirs = os.listdir("sounds/")
 	for file in dirs:
-		f.append(file)
+		f.append(file[:file.rfind('.')])
 	return f
 
-
+file_formats = [".mp3",".wav"]
 
 # Beginning of commands
 class Airhorn(commands.Cog):
@@ -101,6 +101,13 @@ class Airhorn(commands.Cog):
         """Says wow."""
         filename = random.choice(os.listdir("sounds/wow"))
         await play_file(ctx, "sounds/wow/" + filename)
+
+    @commands.command()
+    @commands.guild_only()
+    async def fart(self, ctx):
+        """Farts."""
+        filename = random.choice(os.listdir("sounds/fart"))
+        await play_file(ctx, "sounds/fart/" + filename)
 
     @commands.command()
     @commands.guild_only()
