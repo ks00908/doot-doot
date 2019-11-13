@@ -250,7 +250,7 @@ class Airhorn(commands.Cog):
     @commands.guild_only()
     async def gottem(self, ctx):
         """Ha! Got eem"""
-        await play_file(ctx, "sounds/ha-got-eem.mp3")
+        await play_file(ctx, "sounds/ha-got-eeem.mp3")
 
     @commands.command()
     @commands.guild_only()
