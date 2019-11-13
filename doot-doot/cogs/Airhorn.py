@@ -1,6 +1,8 @@
 import discord
 import random
 import asyncio
+import os
+import re
 from discord.ext import commands
 
 
@@ -69,6 +71,7 @@ async def play_file(ctx, filename):
         await voice_channel.disconnect()
         print(f'Error trying to play a sound: {e}')
         return
+#maximum doot
 
     await ctx.send(":thumbsup: played the effect!")
     while voice_channel.is_playing():
@@ -78,11 +81,26 @@ async def play_file(ctx, filename):
 
     await voice_channel.disconnect()
 
+def getSoundFiles():
+	f = []
+	dirs = os.listdir("sounds/")
+	for file in dirs:
+		f.append(file)
+	return f
+
+
 
 # Beginning of commands
 class Airhorn(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+    @commands.command()
+    @commands.guild_only()
+    async def wow(self, ctx):
+        """Says wow."""
+        filename = random.choice(os.listdir("sounds/wow"))
+        await play_file(ctx, "sounds/wow/" + filename)
 
     @commands.command()
     @commands.guild_only()
