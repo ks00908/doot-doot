@@ -32,6 +32,6 @@ jobs:
         port: 22
         script_stop: true
         script: |
-            dootdootrestart
+            /home/robbiechatbot/doot-doot/DootRestart.sh
             echo "DootDoot successfully re-dooted!"
     
