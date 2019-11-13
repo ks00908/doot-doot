@@ -36,31 +36,33 @@ def setup_logger():
 
 
 async def log(message, bot, level="INFO", debug=""):
+    pass
+    # lmao turn off logging
     # Return if the logging level is not DEBUG, and the bot is trying to log some debugging stuff
-    logger = logging.getLogger("doot-doot")
-    if (logger.getEffectiveLevel != logging.DEBUG) and (level == "DEBUG"):
-        return
+    # logger = logging.getLogger("doot-doot")
+    # if (logger.getEffectiveLevel != logging.DEBUG) and (level == "DEBUG"):
+    #     return
 
-    logChannel = bot.get_channel(int(config['log_channel']))
-    time = datetime.datetime.now().strftime('%H:%M:%S')
+    # logChannel = bot.get_channel(int(config['log_channel']))
+    # time = datetime.datetime.now().strftime('%H:%M:%S')
 
-    if level == "ERROR":
-        levelemote = "❌"
-    elif level == "CRITICAL":
-        levelemote = "🔥"
-    elif level == "WARNING":
-        levelemote = "❗"
-    elif level == "DEBUG":
-        levelemote = "🔧"
-    else:
-        levelemote = "🔎"
+    # if level == "ERROR":
+    #     levelemote = "❌"
+    # elif level == "CRITICAL":
+    #     levelemote = "🔥"
+    # elif level == "WARNING":
+    #     levelemote = "❗"
+    # elif level == "DEBUG":
+    #     levelemote = "🔧"
+    # else:
+    #     levelemote = "🔎"
 
-    await logChannel.send("`[" + time + "]` **" + levelemote + " " + level + ":** " + message)
+    # await logChannel.send("`[" + time + "]` **" + levelemote + " " + level + ":** " + message)
 
-    if debug == "":
-        logDebug(message, level)
-        return
-    logDebug(debug, level)
+    # if debug == "":
+    #     logDebug(message, level)
+    #     return
+    # logDebug(debug, level)
 
 
 def logDebug(message, level="INFO"):
