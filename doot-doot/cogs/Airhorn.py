@@ -246,6 +246,12 @@ class Airhorn(commands.Cog):
         """Honk Honk!"""
         await play_file(ctx, "sounds/honk.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def gottem(self, ctx):
+        """Ha! Got eem"""
+        await play_file(ctx, "sounds/ha-got-eem.mp3")
+
 
 def setup(bot):
     bot.add_cog(Airhorn(bot))
