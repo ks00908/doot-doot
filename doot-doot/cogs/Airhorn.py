@@ -234,5 +234,12 @@ class Airhorn(commands.Cog):
         """From the Megamind (2010) movie soundboard."""
         await play_file(ctx, "sounds/no-freaking-way.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def chewbacca(self, ctx):
+        """chewbacca!"""
+        await play_file(ctx, "sounds/chewbacca.mp3")
+
+
 def setup(bot):
     bot.add_cog(Airhorn(bot))
