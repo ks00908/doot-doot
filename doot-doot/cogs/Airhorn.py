@@ -230,6 +230,12 @@ class Airhorn(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
+    async def nofreakingway(self, ctx):
+        """From the Megamind (2010) movie soundboard."""
+        await play_file(ctx, "sounds/no-freaking-way.mp3")
+
+    @commands.command()
+    @commands.guild_only()
     async def chewbacca(self, ctx):
         """chewbacca!"""
         await play_file(ctx, "sounds/chewbacca.mp3")
