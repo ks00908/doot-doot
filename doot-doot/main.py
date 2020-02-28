@@ -22,7 +22,6 @@ config = getConfig("config.json")
 initial_extensions = [
     'airhorn',
     'basics',
-    'jishaku',
     'fun'
 ]
 
@@ -53,6 +52,7 @@ client.load_extension('jishaku')
 async def on_ready():
     print(f'Logged in as {client.user.name} (ID:{client.user.id}) | Connected to {len(client.guilds)} servers')
     await client.change_presence(activity=discord.Game(name='Dooting on the haters | Prefix is D. | for list of commands use D.help'))
+    client.load_extension('cogs.youtube')
 
 @client.event
 async def on_guild_join(guild):
