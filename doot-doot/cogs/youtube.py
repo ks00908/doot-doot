@@ -133,9 +133,9 @@ class Youtube(commands.Cog):
         if not ctx.author.voice or (player.is_connected and ctx.author.voice.channel.id != int(player.channel_id)):
             return await ctx.send('You\'re not in my voicechannel!')
 
-        player.queue.clear()
-        await self.connect_to(guild_id, None)        
+        player.queue.clear()        
         await player.stop()
+        await self.connect_to(ctx.guild_id, None)
         await ctx.send('*⃣ | Disconnected.')
 
 
