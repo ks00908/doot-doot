@@ -92,7 +92,7 @@ class basics(commands.Cog):
     async def setpresence(self,ctx,*, content):
      """Changing bots presence"""
      if len(content) > 0:
-         if len(content) < 120:
+         if len(content) > 120:
              await ctx.send("Status text is too long, use 120 characters or less.")
          else:
              await self.bot.change_presence(activity=discord.Game(name=content))

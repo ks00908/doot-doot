@@ -135,7 +135,6 @@ class Youtube(commands.Cog):
 
         player.queue.clear()
         await player.stop()
-        await self.connect_to(ctx.guild.id, None)
         await ctx.send('*⃣ | Disconnected.')
 
 
