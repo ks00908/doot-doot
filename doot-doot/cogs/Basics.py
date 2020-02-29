@@ -6,12 +6,15 @@ import time
 from datetime import datetime
 import logging
 
+
 # declaring Cog
-class basics(commands.Cog):
+class Basics(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-# defining owner only command to reload specific cog allowing to update in example airhorn.cog with new sounds without restarting whole bot
+
+    # Defining owner only command to reload specific cog allowing to update in example airhorn.cog with new sounds
+    # without restarting whole bot
     @commands.command(hidden=True)
     @commands.is_owner()
     async def reload(self, ctx, *, cog: str):
@@ -27,7 +30,7 @@ class basics(commands.Cog):
         else:
             await ctx.send(f"I can't find that cog.")
 
-# owner only command to shutdown bot
+    # owner only command to shutdown bot
     @commands.command()
     @commands.guild_only()
     @commands.is_owner()
@@ -50,8 +53,10 @@ class basics(commands.Cog):
     async def github(self, ctx):
         """Gives you my source code."""
         embed = discord.Embed(
-            title="Github repository for DootDoot", colour=0x7289DA,description="Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is available on github page:\n<https://github.com/ks00908/doot-doot>")
-        embed.set_image(url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
+            title="Github repository for DootDoot", colour=0x7289DA,
+            description="Want to report bug?\nsubmit feature request?\nmake new feature?\nbot code is available on github page:\n<https://github.com/ks00908/doot-doot>")
+        embed.set_image(
+            url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
         try:
          await ctx.send(embed=embed)
         except discord.Forbidden: #failover on 403 while sending embed. not used in invite becasue it would look awfull
@@ -66,11 +71,13 @@ class basics(commands.Cog):
             colour=0x7289DA,
             description="Invite doot-doot to your server using this handy link: [Discord bot invite Oauth](https://discordapp.com/oauth2/authorize?client_id=593170973193273344&scope=bot&permissions=3165184)\nif you don't see your server make sure you are logged to right account at [Discord web client](https://www.discordapp.com)",
         )
-        embed.set_image(url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
+        embed.set_image(
+            url="https://cdn.discordapp.com/avatars/593170973193273344/0a143cd8cfa9077570ebef54f097c882.webp")
         try:
-         await ctx.send(embed=embed)
+            await ctx.send(embed=embed)
         except discord.Forbidden:
-            await ctx.send("There was an error sending Embed with bot invite. please check if bot has permission to embed links and try again")
+            await ctx.send(
+                "There was an error sending Embed with bot invite. please check if bot has permission to embed links and try again")
 
 # Posts embed with message from bot author and link to patreon for official bot. Custom hosts are free to remove it, but i would appriciate keeping it
     @commands.command()
@@ -82,7 +89,7 @@ class basics(commands.Cog):
             description="Hi. \nSo i noticed you took intrest in Patreon command.\nCase is simple, it is purely optional, you wont gain real perks apart from role on server and faster looking into feature requests (when possible).\n However, every dollar of support helps me keep bot afloat and helps me expand my knowledge.\n As i said many times there won't be any paywall on features, I won't EVER require you to pay for feature on official bot.\n Patreon link: https://www.patreon.com/ksmakesbots \n Once again, thank you for any support, including warm words or even virtual hug.\n\n   Krzysztof \"ks\" Szypuła"
         )
         try:
-         await ctx.send(embed=embed)
+            await ctx.send(embed=embed)
         except discord.Forbidden:
             await ctx.send("Bot cannot send embed. Please make sure bot has Embed links permission")
 
@@ -101,4 +108,4 @@ class basics(commands.Cog):
          await ctx.send("Presence cannot be empty string")
             
 def setup(bot):
-    bot.add_cog(basics(bot))
+    bot.add_cog(Basics(bot))

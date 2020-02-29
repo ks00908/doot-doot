@@ -1,11 +1,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/347e0974b306643c3f82/maintainability)](https://codeclimate.com/github/ks00908/doot-doot/maintainability) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)  [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html) [![python3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://img.shields.io/badge/python-3.7-blue.svg)
-# doot-doot
+# Doot-Doot
 A Discord bot that play sound effects in voice channel on command.
 
 
 ## Installation
 
-### Prerequisities:
+### Prerequisites:
   * Python 3.7
   * Discord.py rewrite library
   * Discord bot account with token (obtainable through the [Discord Developer Portal](https://discordapp.com/developers/applications/))
@@ -22,8 +22,7 @@ A Discord bot that play sound effects in voice channel on command.
   
   
 ## Adding new sound effects
-First of all make sure that you own the licence to any effect you want to add. Then feel free to fork the project and add the effect to your fork, if it works submit a pull request ATTACHING either proof of licence or source that it is Creative Commons
-[TEMPLATE](https://github.com/ks00908/doot-doot/blob/master/.github/ISSUE_TEMPLATE/effect-merge-request.md)
+Replace command_syntax and file_name respectively with: command used to play sound and filename of sound
 ### Syntax
 ```py
     @commands.command()
@@ -34,4 +33,4 @@ First of all make sure that you own the licence to any effect you want to add. T
 ```
 ## Attributions
 
-Bot and support server images were created by freepick from www.flaticon.com and are under Creative Commons BY 3.0 licence
+Bot and support server images were created by Freepik from www.flaticon.com and are under Creative Commons BY 3.0 licence
