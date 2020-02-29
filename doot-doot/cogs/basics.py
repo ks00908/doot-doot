@@ -36,7 +36,7 @@ class basics(commands.Cog):
         await ctx.send("you're such a turnoff")
         await self.bot.logout()
         await self.bot.close()
-
+# ping command to measure how long it takes for bot to contact gateway
     @commands.command()
     async def ping(self, ctx: commands.Context):
         """Shows the Gateway Ping."""
@@ -45,6 +45,7 @@ class basics(commands.Cog):
         t2 = time.perf_counter()
         await ctx.send(f":hourglass: gateway ping: {round((t2 - t1) * 1000)}ms :hourglass:")
 
+# URL to github meant to allow people to easily find code
     @commands.command()
     async def github(self, ctx):
         """Gives you my source code."""
@@ -56,7 +57,7 @@ class basics(commands.Cog):
         except discord.Forbidden: #failover on 403 while sending embed. not used in invite becasue it would look awfull
          await ctx.send("Want to report bug?\nSubmit feature request?\nMake new feature?\nBot code is available on github page:\n<https://github.com/ks00908/doot-doot>")
     
-    
+# posts link allowing to add bot to your own server    
     @commands.command()
     async def invite(self, ctx):
         """Invite me to your server!"""
@@ -71,6 +72,7 @@ class basics(commands.Cog):
         except discord.Forbidden:
             await ctx.send("There was an error sending Embed with bot invite. please check if bot has permission to embed links and try again")
 
+# Posts embed with message from bot author and link to patreon for official bot. Custom hosts are free to remove it, but i would appriciate keeping it
     @commands.command()
     async def patreon(self, ctx):
         """Optional support? thats great! No worry though, there wont be paywalls"""
@@ -84,14 +86,17 @@ class basics(commands.Cog):
         except discord.Forbidden:
             await ctx.send("Bot cannot send embed. Please make sure bot has Embed links permission")
 
-            
+# owner command to change bot playing status            
     @commands.command()
     @commands.is_owner()
     async def setpresence(self,ctx,*, content):
      """Changing bots presence"""
      if len(content) > 0:
-         await self.bot.change_presence(activity=discord.Game(name=content))
-         await ctx.send("Presence sucesfully changed to\n ```"+content+"```")
+         if len(content) < 120:
+             await ctx.send("Status text is too long, use 120 characters or less.")
+         else:
+             await self.bot.change_presence(activity=discord.Game(name=content))
+             await ctx.send("Presence sucesfully changed to\n ```"+content+"```")
      else:
          await ctx.send("Presence cannot be empty string")
             

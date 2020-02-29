@@ -10,6 +10,7 @@ A Discord bot that play sound effects in voice channel on command.
   * Discord.py rewrite library
   * Discord bot account with token (obtainable through the [Discord Developer Portal](https://discordapp.com/developers/applications/))
   * aiohttp library
+  * Lavalink library (For youtube support)
   
 ### Starting bot:
   1. Install pre-requisites
