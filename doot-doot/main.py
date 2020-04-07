@@ -18,9 +18,9 @@ config = getConfig("config.json")
 
 # Preparing the cogs
 initial_extensions = [
-    'airhorn',
-    'basics',
-    'fun'
+    'Airhorn',
+    'Basics',
+    'Fun'
 ]
 
 # Prefix, description that appear in !help
@@ -44,7 +44,6 @@ async def on_ready():
     await client.change_presence(activity=discord.Game(
         name='Dooting on the haters | Prefix is ' + config['prefix'] + ' | List of commands under ' + config[
             'prefix'] + 'help'))
-    client.load_extension('cogs.youtube')
 
 
 @client.event

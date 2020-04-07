@@ -227,17 +227,6 @@ class Airhorn(commands.Cog):
     async def honk(self, ctx):
         """Honk Honk!"""
         await play_file(ctx, "sounds/honk.mp3")
-    @commands.command()
-    @commands.guild_only()
-    async def caramell (self, ctx):
-        """What am i doing with my life"""
-        await play_file(ctx, "sounds/caramell.mp3")
-
-    @commands.command()
-    @commands.guild_only()
-    async def nofreakingway(self, ctx):
-        """From the Megamind (2010) movie soundboard."""
-        await play_file(ctx, "sounds/no-freaking-way.mp3")
 
     @commands.command()
     @commands.guild_only()
