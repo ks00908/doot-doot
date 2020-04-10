@@ -36,13 +36,14 @@ Replace command_syntax and file_name respectively with: command used to play sou
 Bot and support server images were created by Freepik from www.flaticon.com and are under Creative Commons BY 3.0 licence
 
 
-### Verification
+## Verification
 
+### Licence in regard of Bot Verification program
 Self hosted versions of DootDoot bot are **NOT** permitted to be verified under Discord Bot verification progam. Specific exclusions of this rule can be requested by emailing bot creator at dootdootbot@protonmail.com 
 
 This rule exists mainly so there isn't 500 versions of this bot circling around verified as it will make harder to find official bot, contacting me through email lets you make your case, and as long as its reasonable i am sure it will end in allowing you to verify bot
 
-#### Transparency
+### Transparency
 
 Any verification allowance request will be saved on email inbox and only owner of this repository will be able to see it. Record of interaction in form of emails will be stored on Protonmail servers which privacy policy is avaible under: https://protonmail.com/privacy-policy
 
