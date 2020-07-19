@@ -162,7 +162,7 @@ class Airhorn(commands.Cog):
         """What song is this? Ah, it's Darude - Dootstorm."""
         await play_file(ctx, "sounds/dootstorm.mp3")
 
-    @commands.command()
+    @commands.command(aliases=['wtf'])
     @commands.guild_only()
     async def WTF(self, ctx):
         """Bitch... what the fuck?"""

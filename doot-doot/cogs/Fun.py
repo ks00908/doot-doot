@@ -5,7 +5,7 @@ from discord.ext import commands
 from urbandictionary_top import udtop
 import aiohttp
 from utils.Fr13nd5h1p import Fr13nd5sh1p
-
+from utils.pat import pat
 
 class Fun(commands.Cog):
 
@@ -83,6 +83,15 @@ class Fun(commands.Cog):
         msg = await Fr13nd5sh1p.send_love(sender.name, target.mention)
         return await ctx.send(msg)
 
+    @commands.command()
+    async def pat(self, ctx, target: discord.Member = None):
+        """Gives someone a hug"""
+        if target is None:
+            return await ctx.send("You have to put a mention or user id as an argument!")
+
+        sender = ctx.author
+        msg = await pat.send_love(sender.name, target.mention)
+        return await ctx.send(msg)
 
 def setup(bot):
     bot.add_cog(Fun(bot))
