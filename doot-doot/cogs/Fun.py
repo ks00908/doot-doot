@@ -38,6 +38,8 @@ class Fun(commands.Cog):
                 await ctx.send(
                     "There was a timeout error. its possible that either host, discord api or Urban Dictionary have "
                     "curently issues. Please try again later and if issues continue contact bot owner.")
+            except udtop.TermNotFound:
+                await ctx.send("There was no results to search querry")
             except Exception:
                 await ctx.send(
                     "There was an issue handling your request. Please try again later and if issues continue contact "
