@@ -87,7 +87,7 @@ class fun(commands.Cog):
 
     @commands.command()
     async def pat(self, ctx, target: discord.Member = None):
-        """Gives someone a hug"""
+        """Gives someone a pat"""
         if target is None:
             return await ctx.send("You have to put a mention or user id as an argument!")
 
