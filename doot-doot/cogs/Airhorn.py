@@ -246,13 +246,13 @@ class airhorn(commands.Cog):
         """Incoming TIEs!"""
         await play_file(ctx, "sounds/tie_strafe.mp3")
 
-   @commands.command()
+    @commands.command()
     @commands.guild_only()
     async def wasted(self, ctx):
         """Incoming TIEs!"""
         await play_file(ctx, "sounds/wasted.mp3")
 
-   @commands.command()
+    @commands.command()
     @commands.guild_only()
     async def missionfailed(self, ctx):
         """Incoming TIEs!"""
