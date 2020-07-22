@@ -18,9 +18,9 @@ config = getConfig("config.json")
 
 # Preparing the cogs
 initial_extensions = [
-    'Airhorn',
-    'Basics',
-    'Fun'
+    'airhorn',
+    'basics',
+    'fun'
 ]
 
 # Prefix, description that appear in !help

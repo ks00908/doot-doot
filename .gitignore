@@ -108,5 +108,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# other
 doot-doot/config.json
 doot-doot/cogs/events.py
+.vscode/dootdoot.code-workspace

@@ -7,7 +7,7 @@ import aiohttp
 from utils.Fr13nd5h1p import Fr13nd5sh1p
 from utils.pat import pat
 
-class Fun(commands.Cog):
+class fun(commands.Cog):
 
     def __init__(self, bot):
         # Creation of the cog, do init stuff here, also gets and stores the bot
@@ -96,4 +96,4 @@ class Fun(commands.Cog):
         return await ctx.send(msg)
 
 def setup(bot):
-    bot.add_cog(Fun(bot))
+    bot.add_cog(fun(bot))

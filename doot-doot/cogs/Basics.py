@@ -8,7 +8,7 @@ import logging
 
 
 # declaring Cog
-class Basics(commands.Cog):
+class basics(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -108,4 +108,4 @@ class Basics(commands.Cog):
          await ctx.send("Presence cannot be empty string")
             
 def setup(bot):
-    bot.add_cog(Basics(bot))
+    bot.add_cog(basics(bot))

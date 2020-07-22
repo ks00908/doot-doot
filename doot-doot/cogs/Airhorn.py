@@ -80,7 +80,7 @@ async def play_file(ctx, filename):
 
 
 # Beginning of commands
-class Airhorn(commands.Cog):
+class airhorn(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -234,6 +234,29 @@ class Airhorn(commands.Cog):
         """chewbacca!"""
         await play_file(ctx, "sounds/chewbacca.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def impalert(self, ctx):
+        """We are under Attack, this is not a drill. All pilots report to hangar area!"""
+        await play_file(ctx, "sounds/imperial_alarm.mp3")
+
+    @commands.command()
+    @commands.guild_only()
+    async def tiestrafe(self, ctx):
+        """Incoming TIEs!"""
+        await play_file(ctx, "sounds/tie_strafe.mp3")
+
+   @commands.command()
+    @commands.guild_only()
+    async def wasted(self, ctx):
+        """Incoming TIEs!"""
+        await play_file(ctx, "sounds/wasted.mp3")
+
+   @commands.command()
+    @commands.guild_only()
+    async def missionfailed(self, ctx):
+        """Incoming TIEs!"""
+        await play_file(ctx, "sounds/mfailed.mp3")
 
 def setup(bot):
-    bot.add_cog(Airhorn(bot))
+    bot.add_cog(airhorn(bot))
