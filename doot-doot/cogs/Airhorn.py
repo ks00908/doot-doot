@@ -249,13 +249,13 @@ class airhorn(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def wasted(self, ctx):
-        """Incoming TIEs!"""
+        """You just got wasted by an NPC!"""
         await play_file(ctx, "sounds/wasted.mp3")
 
     @commands.command()
     @commands.guild_only()
     async def missionfailed(self, ctx):
-        """Incoming TIEs!"""
+        """Mission Failed, We'll get them next time"""
         await play_file(ctx, "sounds/mfailed.mp3")
 
 def setup(bot):
