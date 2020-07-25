@@ -17,12 +17,12 @@ A Discord bot that plays sound effects in voice channels on request
   2. Copy the bot files to the location where you want to store them
   3. Replace 'token' in ``main.py`` with your bot token
   4. Open CMD/PowerShell/Terminal and navigate to the folder with the files
-  5. Type ``python main.py`` (if it doesn't work, try using ``python3.7 main.py``.)
+  5. Type ``python main.py`` (if it doesn't work, try using ``python3.7 main.py``)
   6. Wait for the bot to log in
   
   
 ## Adding new sound effects
-Replace ``command_syntax`` with the command used to play the sound (e.g, *clap*) and ``file_name`` with the filename of the sound you'd like to add.
+Replace ``command_syntax`` with the command used to play the sound (e.g, *clap*) and ``file_name`` with the file name of the sound you'd like to add.
 
 ### Syntax
 ```py
@@ -41,11 +41,11 @@ Our assets (such as the bot avatar or the support server icon) were created by F
 ### Regarding Discord Bot Verification Program ([?](https://support.discord.com/hc/en-us/articles/360040720412))
 Self hosted versions of our bot ("DootDoot") may **NOT** apply to the Discord Bot Verification progam. Specific exclusions of this rule can be requested by emailing us at dootdootbot@protonmail.com.
 
-You might be wondering why we do not allow bot clones to be verified, and we have a simple answer. We want to keep the authenticity of the bot for it to not be lost in the plenty of clones there is out there, which would otherwise make it harder to find the official and original bot (DootDoot#2442).
+You might be wondering why we do not allow bot clones to be verified, and we have a simple answer to that question. We want to keep the authenticity of the bot for it to not be lost in the plenty of clones there is out there, which would otherwise make it harder to find the official and original bot (DootDoot#2442).
 However, contacting us via our [email address](dootdootbot@protonmail.com) gives you the chance to explain your case, and as long as it is reasonable, we will most likely allow you to apply on the program.
 
 ### Privacy
 
-Any verification request will be saved on our email inbox, which is only accessible to the owner of this repository. Emails are stored on Protonmail's servers, you can learn more by reading their privacy policy on this [site](https://protonmail.com/privacy-policy).
+Any verification request will be saved on our email inbox, which is only accessible to the owner of this repository. Emails are stored on Protonmail's servers, you can learn more by reading their privacy policy [here](https://protonmail.com/privacy-policy).
 
-**Note:** Please do not contact us on Discord about verification requests, you will be redirected to the aforementioned email adress for logging purposes explained above.
+**Note:** Please do not contact us on Discord about verification requests, you will be redirected to the aforementioned email address for logging purposes as explained above.
