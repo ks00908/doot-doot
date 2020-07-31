@@ -258,5 +258,11 @@ class airhorn(commands.Cog):
         """Mission Failed, We'll get them next time"""
         await play_file(ctx, "sounds/mfailed.mp3")
 
+    @commands.command()
+    @commands.guild_only()
+    async def muffledscreeching(self, ctx):
+        """[19s sound warning] Hey, does anyone else hear that from other room?"""
+        await play_file(ctx, "sounds/caramell_other_room.mp3")
+
 def setup(bot):
     bot.add_cog(airhorn(bot))
